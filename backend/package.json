@@ -1,0 +1,16 @@
+{
+  "name": "cook-net-backend",
+  "version": "0.0.1",
+  "description": "Backend server for CookNet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "T.J. Tarazevits",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "kerberos": "^1.1.2",
+    "mongoose": "^5.4.1"
+  }
+}
