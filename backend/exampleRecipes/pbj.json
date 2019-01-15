@@ -1,0 +1,45 @@
+{"recipe":
+  {
+    "steps": [{
+      "instruction": "Open jar of peanut butter and jar of jelly.",
+      "estimatedTime": 1
+    },
+    {
+      "instruction": "Spread jelly on one slice of bread.",
+      "estimatedTime": 1
+    },
+    {
+      "instruction": "Spread peanut butter on the second slice of bread.",
+      "estimatedTime": 1
+    },
+    {
+      "instruction": "Put both slices of bread together.",
+      "estimatedTime": 1
+    }
+    ],
+    "ingredients": [{
+      "name": "Peanut Butter",
+      "quantity": 1,
+      "unit": "Jar"
+    },
+    {
+      "name": "Jelly",
+      "quantity": 1,
+      "unit": "Jar"
+    },
+    {
+      "name": "Bread",
+      "quantity": 2,
+      "unit": "Slices"
+    }],
+    "mealType": "Snack",
+    "foodType": "Sandwich",
+    "servingSize": 1,
+    "name": "Peanut Butter and Jelly Sandwich",
+    "time": {
+      "total": 4,
+      "prep": 4,
+      "cooking": 0
+    }
+  }
+}
