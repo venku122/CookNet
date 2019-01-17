@@ -1,7 +1,7 @@
 import ActionTypes from './actionTypes';
 import Immutable from 'immutable';
 
-const baseURL = 'localhost:3001';
+const baseURL = 'http://localhost:3001';
 
 const getURL = (url, options) => {
   options.method = 'GET';
@@ -30,7 +30,7 @@ export const fetchRecipes = () => {
       type: ActionTypes.FETCH_RECIPES_ATTEMPTED,
     });
 
-    getURL(`${baseURL}/recipes`,)
+    getURL(`${baseURL}/recipes`, {})
     .then(response => response.json())
     .then(json => {
       dispatch({
