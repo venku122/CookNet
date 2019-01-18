@@ -31,7 +31,7 @@ const handleGetRecipes = async (req, res) => {
     return res.send(500);
   }
 
-  return res.send(recipes.toObject());
+  return res.send(recipes);
 };
 
 const handleCreateRecipe = async (req, res) => {

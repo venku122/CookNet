@@ -27,6 +27,7 @@ export default function reducer(state = DEFAULT_STATE, action) {
       });
     case ActionTypes.FETCH_RECIPES_FAILED:
       return state.merge({
+        fetchingRecipes: false,
         error: err,
       });
     default:

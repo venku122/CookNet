@@ -35,7 +35,7 @@ export const fetchRecipes = () => {
     .then(json => {
       dispatch({
         type: ActionTypes.FETCH_RECIPES_SUCCEEDED,
-        recipes: Immutable.List(json),
+        recipes: Immutable.fromJS(json),
       });
     })
     .catch(err => {
