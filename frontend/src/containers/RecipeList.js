@@ -18,7 +18,7 @@ class RecipeList extends Component {
       <div className="recipeList-container">
         <div className="recipeList-title">CookNet</div>
         <div className="recipeList-subtitle">Recipes Done Right</div>
-        {recipes.map((recipe) => {
+        {recipes.valueSeq().map((recipe) => {
           return (
             <RecipeListItem
               recipe={recipe}

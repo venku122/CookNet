@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 import { connect } from 'react-redux';
 import { fetchRecipeByID } from '../actions/actions';
+import RecipeIngredientBox from '../components/RecipeIngredientBox';
+import RecipeStepBox from '../components/RecipeStepBox';
 import '../styles/RecipeDetail.css';
 
 class RecipeDetail extends Component {
@@ -22,7 +24,11 @@ class RecipeDetail extends Component {
     }
     return (
       <div className="recipeDetail-container">
-        <div className="recipeDetail-title">{`This is the recipe detail page for ${recipeID}`}</div>
+        <div className="recipeDetail-title">
+          {`This is the recipe detail page for ${recipeID}`}
+        </div>
+        <RecipeIngredientBox recipe={recipe}/>
+        <RecipeStepBox recipe={recipe}/>
       </div>
     )
   }
