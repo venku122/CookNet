@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Immutable from 'immutable';
+import '../styles/RecipeList.css';
+import RecipeListItem from '../components/RecipeListItem';
 import { fetchRecipes } from '../actions/actions';
 
 class RecipeList extends Component {
@@ -13,11 +15,15 @@ class RecipeList extends Component {
   render() {
     const { recipes } = this.props;
     return (
-      <div>
-        <div>This is the Recipe List Page</div>
+      <div className="recipeList-container">
+        <div className="recipeList-title">CookNet</div>
+        <div className="recipeList-subtitle">Recipes Done Right</div>
         {recipes.map((recipe) => {
           return (
-            <div>{recipe.get('name')}</div>
+            <RecipeListItem
+              recipe={recipe}
+              key={recipe.get('id')}
+            />
           );
         })}
       </div>
