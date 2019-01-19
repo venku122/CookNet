@@ -23,6 +23,14 @@ const deleteURL = (url, options) => {
   return fetch(url, options);
 };
 
+const recipeListToMap = (list) => {
+  const map = {};
+  for (let i = 0; i < list.length; i++) {
+    const listItem = list[i];
+    map[listItem._id] = listItem;
+  }
+  return map;
+}
 
 export const fetchRecipes = () => {
   return (dispatch) => {
@@ -35,7 +43,7 @@ export const fetchRecipes = () => {
     .then(json => {
       dispatch({
         type: ActionTypes.FETCH_RECIPES_SUCCEEDED,
-        recipes: Immutable.fromJS(json),
+        recipes: Immutable.fromJS(recipeListToMap(json)),
       });
     })
     .catch(err => {
@@ -43,7 +51,31 @@ export const fetchRecipes = () => {
         type: ActionTypes.FETCH_RECIPES_FAILED,
         err,
       });
-    })
-    
+    }) 
   }
 }
+
+export const fetchRecipeByID = (recipeID) => {
+  return (dispatch) => {
+    dispatch({
+      type: ActionTypes.FETCH_RECIPE_BY_ID_ATTEMPTED,
+      recipeID,
+    });
+
+    getURL(`${baseURL}/recipes/${recipeID}`, {})
+    .then(response => response.json())
+    .then(json => {
+      dispatch({
+        type: ActionTypes.FETCH_RECIPE_BY_ID_SUCCEEDED,
+        recipe: Immutable.fromJS(json),
+        recipeID,
+      });
+    })
+    .catch(err => {
+      dispatch({
+        type: ActionTypes.FETCH_RECIPE_BY_ID_FAILED,
+        err,
+      });
+    })
+  }
+};

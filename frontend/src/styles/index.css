@@ -1,3 +1,11 @@
+/*
+  #FFDC43 // lightest
+  #E8AD26
+  #FFAA36 // neutral
+  #E87426
+  #FF5B29 // darkest
+*/
+
 body {
   margin: 0;
   padding: 0;
@@ -12,4 +20,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }

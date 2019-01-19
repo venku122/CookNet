@@ -1,0 +1,13 @@
+.recipeDetail-container {
+  max-width: 85%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-content: center;
+}
+
+.recipeDetail-title {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+}

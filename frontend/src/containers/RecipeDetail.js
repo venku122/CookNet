@@ -1,11 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Immutable from 'immutable';
+import { connect } from 'react-redux';
+import { fetchRecipeByID } from '../actions/actions';
+import '../styles/RecipeDetail.css';
 
-const RecipeDetail = ({ match }) => {
-  const { recipeID } = match.params;
-  return (
-    <div>{`This is the recipe detail page for ${recipeID}`}</div>
-  )
+class RecipeDetail extends Component {
 
+  componentDidMount() {
+    const { match, fetchRecipeDetails } = this.props;
+    const { recipeID } = match.params;
+    fetchRecipeDetails(recipeID);
+  }
+
+  render() {
+    const { match, recipes } = this.props;
+    const { recipeID } = match.params;
+    const recipe = recipes.get(recipeID);
+    if (!recipe) {
+      return null;
+    }
+    return (
+      <div className="recipeDetail-container">
+        <div className="recipeDetail-title">{`This is the recipe detail page for ${recipeID}`}</div>
+      </div>
+    )
+  }
 };
 
-export default RecipeDetail;
+RecipeDetail.propTypes = {
+  match: PropTypes.object.isRequired,
+  recipes: PropTypes.instanceOf(Immutable.Map).isRequired,
+  fetchRecipeDetails: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  return {
+    recipes: state.appState.get('recipes'),
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    fetchRecipeDetails: (recipeID) => {
+      dispatch(fetchRecipeByID(recipeID));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeDetail);

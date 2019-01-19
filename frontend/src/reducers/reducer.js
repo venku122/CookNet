@@ -13,6 +13,8 @@ export default function reducer(state = DEFAULT_STATE, action) {
     type,
     recipes,
     err,
+    recipeID,
+    recipe,
   } = action;
 
   switch(type) {
@@ -29,6 +31,21 @@ export default function reducer(state = DEFAULT_STATE, action) {
       return state.merge({
         fetchingRecipes: false,
         error: err,
+      });
+    case ActionTypes.FETCH_RECIPE_BY_ID_ATTEMPTED:
+      return state.merge({
+        recipes: state.get('recipes').setIn([recipeID, 'fetching'], true),
+      });
+    case ActionTypes.FETCH_RECIPE_BY_ID_FAILED:
+      return state.merge({
+        recipes: state.get('recipes').setIn([recipeID, 'fetching'], false),
+      });
+    case ActionTypes.FETCH_RECIPE_BY_ID_SUCCEEDED:
+      const newRecipe = state.getIn(['recipes', recipeID])
+      .merge(recipe)
+      .set('fetching', false);
+      return state.merge({
+        recipes: state.get('recipes').set(recipeID, newRecipe),
       });
     default:
       return state;

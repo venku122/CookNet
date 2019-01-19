@@ -11,6 +11,10 @@ class App extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAllRecipes();
+  }
+
   render() {
     return (
       <div>
