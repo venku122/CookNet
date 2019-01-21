@@ -1,21 +1,20 @@
-.recipeIngredientBox-container {
+.RecipeDetailedInfo-container {
   display: inline-block;
   margin: 5px auto;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  height: inherit;
 }
 
-.recipeIngredientBox-title {
-  text-align: center;
+.RecipeDetailedInfo-title {
+  text-align: Left;
   font-size: 1.5em;
   padding-bottom: 5px;
 }
 
-.recipeIngredientBox-item-content {
+.RecipeDetailedInfo-item {
   padding: 5px 0px;
 }
 
-.recipeIngredientBox-item-content:hover {
+.RecipeDetailedInfo-item:hover {
   background-color: rgba(232,173,38, 0.5);
 }

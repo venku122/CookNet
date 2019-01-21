@@ -34,7 +34,7 @@ class RecipeList extends Component {
 };
 
 RecipeList.propTypes = {
-  recipes: PropTypes.instanceOf(Immutable.List).isRequired,
+  recipes: PropTypes.instanceOf(Immutable.Map).isRequired,
 }
 
 const mapStateToProps = (state) => {

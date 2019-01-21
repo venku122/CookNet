@@ -26,8 +26,9 @@ class RecipeStepBox extends Component {
           const stepNumber = index + 1; // 0-index hack
           const instruction = step.get('instruction');
           const estimatedTime = this.calculateEstimatedTime(step.get('estimatedTime'));
+          const id = step.get('_id');
           return (
-            <div className="RecipeStepBox-item-container">
+            <div className="RecipeStepBox-item-container" key={id}>
               <div className="RecipeStepBox-item-content">
                 {`${stepNumber}: ${instruction} (${estimatedTime})`}
               </div>

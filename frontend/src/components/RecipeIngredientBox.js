@@ -19,8 +19,9 @@ class RecipeIngredientBox extends Component {
           const unit = ingredient.get('unit');
           const quantity = ingredient.get('quantity');
           const name = ingredient.get('name');
+          const id = ingredient.get('_id');
           return (
-            <div className="recipeIngredientBox-item-container">
+            <div className="recipeIngredientBox-item-container" key={id}>
               <div className="recipeIngredientBox-item-content">
                 {`${quantity} ${unit} ${name}`}
               </div>
