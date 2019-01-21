@@ -3,7 +3,7 @@ import Immutable from 'immutable';
 
 const DEFAULT_STATE = Immutable.Map({
   fetchingRecipes: false,
-  recipes: Immutable.List([]),
+  recipes: Immutable.Map([]),
   error: null,
 });
 
@@ -23,9 +23,9 @@ export default function reducer(state = DEFAULT_STATE, action) {
         fetchingRecipes: true,
       });
     case ActionTypes.FETCH_RECIPES_SUCCEEDED:
-      return state.merge({
+      return state.mergeDeep({
         fetchingRecipes: false,
-        recipes
+        recipes,
       });
     case ActionTypes.FETCH_RECIPES_FAILED:
       return state.merge({

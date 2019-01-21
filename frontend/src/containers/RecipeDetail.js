@@ -22,10 +22,11 @@ class RecipeDetail extends Component {
     if (!recipe) {
       return null;
     }
+    const name = recipe.get('name');
     return (
       <div className="recipeDetail-container">
         <div className="recipeDetail-title">
-          {`This is the recipe detail page for ${recipeID}`}
+          {name}
         </div>
         <RecipeIngredientBox recipe={recipe}/>
         <RecipeStepBox recipe={recipe}/>

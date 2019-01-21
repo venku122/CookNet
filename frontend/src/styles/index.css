@@ -1,9 +1,9 @@
 /*
-  #FFDC43 // lightest
-  #E8AD26
-  #FFAA36 // neutral
-  #E87426
-  #FF5B29 // darkest
+  #FFDC43 / 255,220,67 // lightest
+  #E8AD26 / 232,173,38
+  #FFAA36 / 255,170,54 // neutral
+  #E87426 / 232,116,38
+  #FF5B29 / 255,91,41 // darkest
 */
 
 body {
@@ -14,7 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FFDC43;
+  /* background-color: #FFDC43; */
+  background-color: rgba(255,220,67, 0.5)
 }
 
 code {

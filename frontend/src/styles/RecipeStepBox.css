@@ -1,0 +1,14 @@
+.RecipeStepBox-container {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.RecipeStepBox-title {
+  font-size: 1.5em;
+  padding-bottom: 10px;
+}
+
+.RecipeStepBox-item-container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

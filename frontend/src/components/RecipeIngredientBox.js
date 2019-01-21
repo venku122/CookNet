@@ -12,7 +12,7 @@ class RecipeIngredientBox extends Component {
     if (!ingredients) return null;
     return (
       <div className="recipeIngredientBox-container">
-        <div clasName="recipeIngredientBox-title">
+        <div className="recipeIngredientBox-title">
           Ingredients
         </div>
         {ingredients.map((ingredient) => {
