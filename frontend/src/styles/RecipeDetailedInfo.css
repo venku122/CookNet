@@ -3,6 +3,7 @@
   margin: 5px auto;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
+  min-width: 225px;
 }
 
 .RecipeDetailedInfo-title {
