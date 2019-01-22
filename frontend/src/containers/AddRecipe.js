@@ -11,11 +11,29 @@ import '../styles/AddRecipe.css';
 
 class AddRecipe extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      recipeName: '',
+      foodType: '',
+      mealType: '',
+      servingSize: -1,
+    };
+
+    this.handleMetadataChange = this.handleMetadataChange.bind(this);
+  }
+
+  handleMetadataChange(newMetadata) {
+
+    this.setState(newMetadata);
+  }
+
   render() {
     return (
       <div className="addRecipe-container">
         <div className="addRecipe-title">This is the page to add a recipe</div>
-        <AddMetadataInput />
+        <AddMetadataInput onMetadataChange={this.handleMetadataChange}/>
         <AddIngredientsInput />
         <AddInstructionsInput />
         <AddPhotosInput />

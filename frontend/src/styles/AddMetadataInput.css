@@ -1,0 +1,10 @@
+.addMetadata-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.addMetadata-inputContainer {
+  display: block;
+  margin: 10px 5px;
+}
