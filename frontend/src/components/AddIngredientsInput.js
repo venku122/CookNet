@@ -6,7 +6,11 @@ class AddIngredientsInput extends Component {
 
   render() {
     return (
-      <div>Add Ingredients Input</div>
+      <div>
+        <input type="text" id="ingredientName"/>
+        <input type="text" id="ingredientUnit" />
+        <input type="number" id="ingredientQuantity" />
+      </div>
     );
   }
 }
