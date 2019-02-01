@@ -25,15 +25,17 @@ class RecipeDetail extends Component {
     }
     const name = recipe.get('name');
     return (
-      <div className="recipeDetail-container">
-        <div className="recipeDetail-title">
-          {name}
+      <div className="recipeDetail-page">
+        <div className="recipeDetail-container">
+          <div className="recipeDetail-title">
+            {name}
+          </div>
+          <div className="recipeDetail-info">
+            <RecipeDetailedInfo recipe={recipe} />
+            <RecipeIngredientBox recipe={recipe}/>
+          </div>
+          <RecipeStepBox recipe={recipe}/>
         </div>
-        <div className="recipeDetail-info">
-          <RecipeDetailedInfo recipe={recipe} />
-          <RecipeIngredientBox recipe={recipe}/>
-        </div>
-        <RecipeStepBox recipe={recipe}/>
       </div>
     )
   }
