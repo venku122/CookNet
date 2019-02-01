@@ -4,8 +4,7 @@ import Immutable from 'immutable';
 import { connect } from 'react-redux';
 import { fetchRecipeByID } from '../actions/actions';
 import RecipeDetailedInfo from '../components/RecipeDetailedInfo';
-import RecipeIngredientBox from '../components/RecipeIngredientBox';
-import RecipeStepBox from '../components/RecipeStepBox';
+import RecipeInfoSwitcher from '../components/RecipeInfoSwitcher';
 import '../styles/RecipeDetail.css';
 
 class RecipeDetail extends Component {
@@ -29,12 +28,13 @@ class RecipeDetail extends Component {
         <div className="recipeDetail-container">
           <div className="recipeDetail-title">
             {name}
+            <RecipeDetailedInfo recipe={recipe} />
           </div>
           <div className="recipeDetail-info">
-            <RecipeDetailedInfo recipe={recipe} />
-            <RecipeIngredientBox recipe={recipe}/>
+            <RecipeInfoSwitcher recipe={recipe}/>
+
           </div>
-          <RecipeStepBox recipe={recipe}/>
+
         </div>
       </div>
     )

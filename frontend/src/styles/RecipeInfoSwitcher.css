@@ -1,0 +1,38 @@
+.recipeInfoSwitcher-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: white;
+}
+
+.recipeInfoSwitcher-header {
+
+}
+
+.recipeInfoSwitcher-buttonRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.recipeInfoSwitcher-button {
+  color: #465373;
+  font-size:  1.5em;
+  font-weight: 500;
+}
+
+.recipeInfoswitcher-status {
+  width: 30%;
+  height: 5px;
+  margin-top: 10px;
+  background-color: #F7DC33;
+  z-index: 2;
+}
+
+.recipeInfoswitcher-status-base {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+  background-color: #F0F0F0;
+  z-index: 1;
+}

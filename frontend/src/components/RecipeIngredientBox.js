@@ -12,9 +12,6 @@ class RecipeIngredientBox extends Component {
     if (!ingredients) return null;
     return (
       <div className="recipeIngredientBox-container">
-        <div className="recipeIngredientBox-title">
-          Ingredients
-        </div>
         {ingredients.map((ingredient) => {
           const unit = ingredient.get('unit');
           const quantity = ingredient.get('quantity');

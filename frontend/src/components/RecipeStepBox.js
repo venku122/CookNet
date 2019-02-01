@@ -19,9 +19,6 @@ class RecipeStepBox extends Component {
     if (!steps) return null;
     return (
       <div className="RecipeStepBox-container">
-        <div className="RecipeStepBox-title">
-          Steps
-        </div>
         {steps.map((step, index) => {
           const stepNumber = index + 1; // 0-index hack
           const instruction = step.get('instruction');
