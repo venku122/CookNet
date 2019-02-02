@@ -23,13 +23,19 @@ class RecipeDetail extends Component {
       return null;
     }
     const name = recipe.get('name');
+    const primaryPhoto = recipe.getIn(['photos', 'featured']);
     return (
       <div className="recipeDetail-page">
         <div className="recipeDetail-container">
-          <div className="recipeDetail-title">
-            {name}
-            <RecipeDetailedInfo recipe={recipe} />
+          <div className="recipeDetail-info-container">
+            <div className="recipeDetail-image">
+              <img src={primaryPhoto} alt=""/>
+            </div>
+            <div className="recipeDetail-title">
+              {name}
+            </div>
           </div>
+          {/*<RecipeDetailedInfo recipe={recipe} /> */}
           <div className="recipeDetail-info">
             <RecipeInfoSwitcher recipe={recipe}/>
 
