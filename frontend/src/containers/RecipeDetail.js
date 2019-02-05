@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 import { connect } from 'react-redux';
 import { fetchRecipeByID } from '../actions/actions';
-import RecipeDetailedInfo from '../components/RecipeDetailedInfo';
+import RecipeMetaData from '../components/RecipeMetaData';
 import RecipeInfoSwitcher from '../components/RecipeInfoSwitcher';
 import '../styles/RecipeDetail.css';
 
@@ -35,10 +35,9 @@ class RecipeDetail extends Component {
               {name}
             </div>
           </div>
-          {/*<RecipeDetailedInfo recipe={recipe} /> */}
           <div className="recipeDetail-info">
             <RecipeInfoSwitcher recipe={recipe}/>
-
+            <RecipeMetaData recipe={recipe} />
           </div>
 
         </div>

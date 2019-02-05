@@ -1,0 +1,31 @@
+.RecipeMetaData-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  background-color: white;
+}
+
+.RecipeMetaData-title {
+  text-align: Left;
+  font-size: 1.5em;
+  padding-bottom: 5px;
+}
+
+.RecipeMetaData-item {
+  padding: 5px;
+  padding-right: 20px;
+}
+
+.RecipeMetaData-item-header  {
+  text-align: left;
+  margin-bottom: 10px;
+  color: #465373;
+  font-weight: 100;
+}
+
+.RecipeMetaData-item-value {
+  text-align: left;
+  font-weight: bold;
+}
